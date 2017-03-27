@@ -1,0 +1,37 @@
+{
+  "name": "object-merger",
+  "version": "1.0.0",
+  "description": "Deep merge objects, better version of native Object.assign.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarradseers/object-merger.git"
+  },
+  "keywords": [
+    "object",
+    "merge",
+    "deep",
+    "copy",
+    "assign",
+    "object.assign",
+    "object.merge",
+    "object",
+    "merger",
+    "deepcopy",
+    "deep",
+    "copy",
+    "merge"
+  ],
+  "author": "Jarrad Seers <jarrad@seers.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarradseers/object-merger/issues"
+  },
+  "homepage": "https://github.com/jarradseers/object-merger#readme"
+}
