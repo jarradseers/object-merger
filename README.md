@@ -1,8 +1,8 @@
 # Object Merger
 
-  Merge Objects properly instead of overwriting them.  Essentially a deep `Object.assign`. It's very simple, written in ES6+ and handles a basic deep copy of objects.
+  Merge Javascript Objects properly instead of overwriting them.  Essentially a deep `Object.assign`. It's very simple, written in ES6+ and handles a basic deep copy of objects.
 
-  This was written out of frustrations with `Object.assign` and the heavier weight of some alternative packages trying to support everything.
+  This was written due to lack of power with `Object.assign` and the heavier weight of some alternative packages trying to support everything.
 
 ## Usage
 

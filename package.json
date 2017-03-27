@@ -1,6 +1,10 @@
 {
   "name": "object-merger",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "engines" : {
+    "node" : ">=6.0.0"
+  },
+  "engineStrict": true,
   "description": "Deep merge objects, better version of native Object.assign.",
   "main": "index.js",
   "directories": {
@@ -26,7 +30,8 @@
     "deepcopy",
     "deep",
     "copy",
-    "merge"
+    "merge",
+    "es6"
   ],
   "author": "Jarrad Seers <jarrad@seers.me>",
   "license": "MIT",
