@@ -6,7 +6,6 @@
  * @created 27/03/2017 NZDT
  */
 
-'use strict';
 
 /**
  * Module dependencies.
@@ -28,8 +27,8 @@ const obj4 = merge(obj1, obj2, obj3);
 assert.deepEqual(obj4, expected) || total++;
 
 // Test that none of the original objects have changed.
-[obj1, obj2, obj3].forEach((obj, i) => {
-  assert.deepEqual(require('./object' + (i + 1)), obj) || total++;
+[obj1, obj2, obj3].forEach((obj, int) => {
+  assert.deepEqual(require(`./object${int + 1}`), obj) || total++;
 });
 
 // If we've passed all the tests.

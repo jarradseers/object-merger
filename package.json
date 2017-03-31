@@ -1,8 +1,8 @@
 {
   "name": "object-merger",
-  "version": "1.0.2",
-  "engines" : {
-    "node" : ">=6.0.0"
+  "version": "1.0.3",
+  "engines": {
+    "node": ">=6.0.0"
   },
   "engineStrict": true,
   "description": "Deep merge objects, better version of native Object.assign.",
@@ -11,7 +11,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test"
+    "test": "eslint . --fix && node test"
   },
   "repository": {
     "type": "git",
@@ -38,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/jarradseers/object-merger/issues"
   },
-  "homepage": "https://github.com/jarradseers/object-merger#readme"
+  "homepage": "https://github.com/jarradseers/object-merger#readme",
+  "devDependencies": {
+    "eslint": "^3.18.0"
+  }
 }

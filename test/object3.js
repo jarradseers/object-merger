@@ -7,4 +7,4 @@ module.exports = {
       pass: 'm0res3cr3t'
     }
   }
-}
+};
