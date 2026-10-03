@@ -1,17 +1,18 @@
 {
   "name": "object-merger",
-  "version": "1.0.4",
+  "version": "1.0.5",
+  "description": "Deep merge objects into a new object, a deep Object.assign.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "engines": {
     "node": ">=6.0.0"
   },
-  "engineStrict": true,
-  "description": "Deep merge objects, better version of native Object.assign.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "eslint . --fix && node test"
+    "lint": "eslint .",
+    "test": "eslint . && node --test test/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,18 +21,12 @@
   "keywords": [
     "object",
     "merge",
-    "deep",
-    "copy",
-    "assign",
-    "object.assign",
-    "object.merge",
-    "object",
     "merger",
-    "deepcopy",
     "deep",
     "copy",
-    "merge",
-    "es6"
+    "deepcopy",
+    "assign",
+    "object.assign"
   ],
   "author": "Jarrad Seers <jarrad@seers.me>",
   "license": "MIT",
@@ -40,6 +35,8 @@
   },
   "homepage": "https://github.com/jarradseers/object-merger#readme",
   "devDependencies": {
-    "eslint": "^3.18.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0"
   }
 }
