@@ -31,5 +31,13 @@ assert.deepEqual(obj4, expected) || total++;
   assert.deepEqual(require(`./object${int + 1}`), obj) || total++;
 });
 
+// Test that merging cannot pollute Object.prototype.
+merge({}, JSON.parse('{"__proto__":{"polluted":true}}'));
+merge({}, JSON.parse('{"constructor":{"prototype":{"polluted":true}}}'));
+assert.ok(!('polluted' in {})) || total++;
+
+// Test that null values are merged rather than throwing.
+assert.deepEqual(merge({ one: { two: 2 } }, { one: null, three: null }), { one: null, three: null }) || total++;
+
 // If we've passed all the tests.
 console.log(`All ${total} of ${total} tests passed.`);
