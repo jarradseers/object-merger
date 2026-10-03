@@ -1,24 +1,9 @@
 # Object Merger
 
-  Merge Javascript Objects properly instead of overwriting them.  Essentially a deep `Object.assign`. It's very simple, written in ES6+ and handles a basic deep copy of objects.
+[![CI](https://github.com/jarradseers/object-merger/actions/workflows/ci.yml/badge.svg)](https://github.com/jarradseers/object-merger/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/object-merger.svg)](https://www.npmjs.com/package/object-merger)
 
-  This was written due to lack of power with `Object.assign` and the heavier weight of some alternative packages trying to support everything.
-
-## Usage
-
-```js
-const merge = require('object-merger');
-const obj4 = merge(obj1, obj2, obj3); // returns a new object, doesn't modify existing.
-```
-
-Optionally you could add a static to the `Object`
-
-```js
-Object.merge = require('object-merger');
-const obj4 = Object.merge(obj1, obj2, obj3); // returns a new object, doesn't modify existing.
-```
-
-Check out the [test folder](test) for more!
+Merge JavaScript objects deeply instead of overwriting them. Essentially a deep `Object.assign` that returns a new object. Small, with no dependencies.
 
 ## Installation
 
@@ -26,25 +11,43 @@ Check out the [test folder](test) for more!
 $ npm install object-merger
 ```
 
-## Features
+## Usage
 
-  * Merge multiple objects instead of overwrite them.
-  * Simple, fast, light-weight with no external dependencies
-  * Written in ES6+ for node.js 6+
-  * Test driven
+```js
+const merge = require('object-merger');
 
-## Options
+const defaults = { server: { port: 3000, cache: true }, plugins: ['a'] };
+const local = { server: { port: 8080 }, plugins: ['b'] };
 
-  As many objects as you'd like to merge from left to right.
+merge(defaults, local);
+// { server: { port: 8080, cache: true }, plugins: ['a', 'b'] }
+```
+
+Pass as many objects as you like. They are merged from left to right into a new object; the objects you pass in are not modified.
+
+## How values are merged
+
+| Value | Result |
+|---|---|
+| Plain objects | Merged key by key, recursively. |
+| Arrays | Concatenated, earlier items first. |
+| Everything else | The later value replaces the earlier one. This includes `null`, dates, regular expressions and class instances, which are kept as they are rather than copied. |
+
+If the two values are of different kinds (an object and an array, say) the later one wins.
+
+Arguments that are not objects are ignored.
+
+## Security
+
+A `__proto__` key is skipped, and `constructor` and `prototype` are treated as ordinary keys, so merging untrusted JSON cannot modify `Object.prototype`. Versions before 1.0.4 were vulnerable to prototype pollution.
 
 ## Tests
 
-  From the package 
-
-  ```bash
-  $ npm test
-  ```
+```bash
+$ npm install
+$ npm test
+```
 
 ## License
 
-  [MIT](LICENSE)
+[MIT](LICENSE)
